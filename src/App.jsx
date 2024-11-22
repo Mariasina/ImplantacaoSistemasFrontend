@@ -11,7 +11,7 @@ function App() {
 
   const getUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/person");
+      const res = await axios.get("https://implantacaosistemasbackend.onrender.com/api/person");
       setList(res.data);
       console.log(res.data); 
     } catch (error) {
@@ -21,7 +21,7 @@ function App() {
 
   const registerUser = async () => {
     try { 
-      await axios.post("http://localhost:8080/api/person",{
+      await axios.post("https://implantacaosistemasbackend.onrender.com/api/person",{
         name, lastname, salary
       });
     } catch (error) {
@@ -32,7 +32,7 @@ function App() {
   const deleteUser = async (id) => {
     try { 
       console.log(id)
-      await axios.delete(`http://localhost:8080/api/person/${id}`);
+      await axios.delete(`https://implantacaosistemasbackend.onrender.com/api/person/${id}`);
       getUsers()
     } catch (error) {
       console.error("Erro ao deletar", error);
